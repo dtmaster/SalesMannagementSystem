@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import UserInput from './UserInput'
 import SalesLists from './Table'
+import MultiForm from './MultilineInput.tsx'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <h1>Sales Management System</h1>
       <UserInput/>
       <SalesLists/>
+      <MultiForm/>
     </div>
            
   );
