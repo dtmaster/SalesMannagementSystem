@@ -14,14 +14,14 @@ const useStyles = makeStyles(theme => ({
   },
   margin: {
     margin: theme.spacing(1),
-    //marginTop: theme.spacing(3)
+    marginTop: theme.spacing(3)
   },
   textField: {
     flexBasis: 200,
   },
 }));
 
-export default function OutlinedInputAdornments() {
+export default function OutlinedInputAdornments(props) {
   const classes = useStyles();
   const [values, setValues] = React.useState({
     pricePA_USD: '',
@@ -35,7 +35,7 @@ export default function OutlinedInputAdornments() {
 
   return (
 <div className={classes.root}>
-
+    <h3 className={clsx(classes.margin, classes.textField)}>{props.title}</h3>
       <TextField
         id="outlined-adornment-packageA"
         className={clsx(classes.margin, classes.textField)}
@@ -45,7 +45,7 @@ export default function OutlinedInputAdornments() {
         onChange={handleChange('pricePA_USD')}
         
         InputProps={{
-          endAdornment: <InputAdornment position="end">$</InputAdornment>,
+          endAdornment: <InputAdornment position="end">{props.placeholder}</InputAdornment>,
         }}
       />
       <TextField
@@ -57,7 +57,7 @@ export default function OutlinedInputAdornments() {
         onChange={handleChange('pricePB_USD')}
         
         InputProps={{
-          endAdornment: <InputAdornment position="end">$</InputAdornment>,
+          endAdornment: <InputAdornment position="end">{props.placeholder}</InputAdornment>,
         }}
       />
  
@@ -70,7 +70,7 @@ export default function OutlinedInputAdornments() {
           onChange={handleChange('pricePC_USD')}
           
           InputProps={{
-            endAdornment: <InputAdornment position="end">$</InputAdornment>,
+            endAdornment: <InputAdornment position="end">{props.placeholder}</InputAdornment>,
           }}
         />
       
